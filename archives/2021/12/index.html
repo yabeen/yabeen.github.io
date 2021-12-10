@@ -9,146 +9,68 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
   <body>
-    
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #222327;
-}
-.navigation
-{
-  position: absolute;
-  top: 0px;
-  width: 4000px;
-  height: 60px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navigation ul
-{
-  padding: 0pt;
-  display: flex;
-  width: 700px;   
-}
-.navigation ul li
-{
-  list-style: none;
-  position: relative;
-  float: left;
-  width: 140px;
-  height: 60px;
-  z-index: 2;
-}
-.navigation ul li a
-{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-}
-
-.navigation ul li a .icon
-{
-  position: relative;
-  display: block;
-  line-height: 65px;
-  font-size: 1.5em;
-  transition: 0.5s; 
-  color: #222327; 
-}
-.navigation ul li.active a .icon
-{
-  transform: translateY(32px);/*下拉长度*/
-  color: #2196f3;
-}
-.navigation ul li a .text
-{
-  position: absolute;
-  background: #2196f3;
-  color: #fff; 
-  padding: 2px 7px; 
-  border-radius: 12px;
-  font-weight: 400;
-  font-size: 0.75em;
-  letter-spacing: 0.05em;
-  transition: 0.5s;
-  opacity: 0;
-  transform: translateY(-15px);
-}
-.navigation ul li.active a .text
-{
-  transform: translateY(4px);
-  opacity: 1;
-}
-.indicator
-{
-  position: absolute;
-  top: -55px;
-  width: 140px;
-  height: 140px;
-  background: #fff;
-  border-radius: 50%;
-  z-index: 1;
-  transition: 0.5s;
-}
-.indicator::before
-{
- content: '';
- position: absolute;
- bottom: -35px;
- left: -26px;
- width: 60px;
- height: 60px;
- background: transparent;
- border-radius: 50%;
- box-shadow: 20px -51px #fff;
-}
-.indicator::after
-{
- content: '';
- position: absolute;
- bottom: -35px;
- right: -26px;
- width: 60px;
- height: 60px;
- background: transparent;
- border-radius: 50%;
- box-shadow: -20px -51px #fff;
-}
-.navigation ul li:nth-child(1).active ~ .indicator
-{
-  transform: translateX(calc(140px * 0));
-}
-.navigation ul li:nth-child(2).active ~ .indicator
-{
-  transform: translateX(calc(140px * 1));
-}.navigation ul li:nth-child(3).active ~ .indicator
-{
-  transform: translateX(calc(140px * 2));
-}
-.navigation ul li:nth-child(4).active ~ .indicator
-{
-  transform: translateX(calc(140px * 3));
-}
-.navigation ul li:nth-child(5).active ~ .indicator
-{
-  transform: translateX(calc(140px * 4));
-}
+    <header class="header">
+    <div class="blog-title">
+      <a href="/" class="logo">Hexo</a>
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                     <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">主页</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">信息</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="text">消息</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </span>
+                    <span class="text">照片</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="text">设置</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </nav>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item) =>
+        item.addEventListener('click',activeLink));
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </header>
     <main class="main">
       <section class="posts">
     
